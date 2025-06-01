@@ -1,8 +1,7 @@
-package com.journaljunkie.utilities
-
 import java.util.concurrent.locks.ReentrantReadWriteLock
 import kotlin.concurrent.read
 import kotlin.concurrent.write
+import java.text.Normalizer
 
 /**
  * A Kotlin port of JoshuaDoes's swear filter library
@@ -71,7 +70,7 @@ class KFYourself(
 
             var message = msg.lowercase()
             message = normalizeLeetSpeak(message)
-            message = normalizeText(message)
+            message = normalizeString(message)
 
             val trippedWords = mutableListOf<String>()
 
@@ -125,12 +124,10 @@ class KFYourself(
         return normalized
     }
 
-    private fun normalizeText(message: String): String {
-        var normalized = message.trim()
-        normalized = normalized.replace("\t", " ")
-        normalized = normalized.replace("\u200B", "")
-        normalized = normalized.replace(Regex("\\s{2,}"), " ")
-        return normalized
+    private fun normalizeString(input: String): String {
+        // Normalize the string to remove accents
+        return Normalizer.normalize(input, Normalizer.Form.NFD)
+            .replace(Regex("[^\\p{ASCII}]"), "")
     }
 
     /**

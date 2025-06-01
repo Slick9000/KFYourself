@@ -1,6 +1,8 @@
 # KFYourself
 a kotlin port of joshuadoes' sanitization based swear filter
 
+note: this version lacks the enableSpacedBypass of the golang counterpart as i don't want it
+
 ## Usage
 
 ```kotlin

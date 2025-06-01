@@ -1,5 +1,5 @@
 # KFYourself
-a kotlin port of joshuadoes's sanitization based swear filter
+a kotlin port of joshuadoes' sanitization based swear filter
 
 ## Usage
 

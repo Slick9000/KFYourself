@@ -1,7 +1,7 @@
 # KFYourself
 a kotlin port of joshuadoes' sanitization based swear filter
 
-Note: Special character pattern filtering and spaced pattern filtering are enabled by default and have no option to be disabled.
+note: special character pattern filtering and spaced pattern filtering are enabled by default and have no option to be disabled.
 
 ## Usage
 
